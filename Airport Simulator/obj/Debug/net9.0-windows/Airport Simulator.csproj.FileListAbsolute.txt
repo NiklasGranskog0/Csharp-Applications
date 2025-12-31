@@ -1,0 +1,20 @@
+C:\Users\Gamer\Desktop\C#\Airport Simulator\bin\Debug\net9.0-windows\Airport Simulator.exe
+C:\Users\Gamer\Desktop\C#\Airport Simulator\bin\Debug\net9.0-windows\Airport Simulator.deps.json
+C:\Users\Gamer\Desktop\C#\Airport Simulator\bin\Debug\net9.0-windows\Airport Simulator.runtimeconfig.json
+C:\Users\Gamer\Desktop\C#\Airport Simulator\bin\Debug\net9.0-windows\Airport Simulator.dll
+C:\Users\Gamer\Desktop\C#\Airport Simulator\bin\Debug\net9.0-windows\Airport Simulator.pdb
+C:\Users\Gamer\Desktop\C#\Airport Simulator\obj\Debug\net9.0-windows\MainWindow.g.cs
+C:\Users\Gamer\Desktop\C#\Airport Simulator\obj\Debug\net9.0-windows\App.g.cs
+C:\Users\Gamer\Desktop\C#\Airport Simulator\obj\Debug\net9.0-windows\Airport Simulator_MarkupCompile.cache
+C:\Users\Gamer\Desktop\C#\Airport Simulator\obj\Debug\net9.0-windows\Airport Simulator_MarkupCompile.lref
+C:\Users\Gamer\Desktop\C#\Airport Simulator\obj\Debug\net9.0-windows\MainWindow.baml
+C:\Users\Gamer\Desktop\C#\Airport Simulator\obj\Debug\net9.0-windows\Airport Simulator.g.resources
+C:\Users\Gamer\Desktop\C#\Airport Simulator\obj\Debug\net9.0-windows\Airport Simulator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gamer\Desktop\C#\Airport Simulator\obj\Debug\net9.0-windows\Airport Simulator.AssemblyInfoInputs.cache
+C:\Users\Gamer\Desktop\C#\Airport Simulator\obj\Debug\net9.0-windows\Airport Simulator.AssemblyInfo.cs
+C:\Users\Gamer\Desktop\C#\Airport Simulator\obj\Debug\net9.0-windows\Airport Simulator.csproj.CoreCompileInputs.cache
+C:\Users\Gamer\Desktop\C#\Airport Simulator\obj\Debug\net9.0-windows\Airport Simulator.dll
+C:\Users\Gamer\Desktop\C#\Airport Simulator\obj\Debug\net9.0-windows\refint\Airport Simulator.dll
+C:\Users\Gamer\Desktop\C#\Airport Simulator\obj\Debug\net9.0-windows\Airport Simulator.pdb
+C:\Users\Gamer\Desktop\C#\Airport Simulator\obj\Debug\net9.0-windows\Airport Simulator.genruntimeconfig.cache
+C:\Users\Gamer\Desktop\C#\Airport Simulator\obj\Debug\net9.0-windows\ref\Airport Simulator.dll

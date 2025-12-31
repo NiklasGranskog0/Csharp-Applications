@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WPFLibrary.MainWindow">
+    <Position X="0.75" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAaIAAAAAAAAAAAAACBAAAAABQQAAAEAIACAAAAQAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WPFLibrary.ChangeWindow">
+    <Position X="7" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAQAAAAQAAgAEABAAAAAAAAAAAAAQAAAAAAAAAIA=</HashCode>
+      <FileName>ChangeWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WPFLibrary.Managers.WindowManager">
+    <Position X="3" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AgZAAEAAAAAAAQAgAAIBAABAAAAASAAAAgAiEAAgAAA=</HashCode>
+      <FileName>Managers\WindowManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WPFLibrary.Managers.ItemManager">
+    <Position X="5.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAgIAAAKCAAAAAAABAAAgAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Managers\ItemManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WPFLibrary.Database.Database">
+    <Position X="4.25" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAEAAAAAAEBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Database\Database.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFLibrary.Extensions.Extension">
+    <Position X="0.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAACAAAAAAAIAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions\Extension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFLibrary.Extensions.RecordExtensions">
+    <Position X="2.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAgAAAAAAAAAAQ=</HashCode>
+      <FileName>Extensions\RecordExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="WPFLibrary.Interfaces.IAdd">
+    <Position X="8.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IAdd.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

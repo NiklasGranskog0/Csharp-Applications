@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Movie",
+    "movieActor": "Me",
+    "genre": 2,
+    "duration": 123,
+    "rating": 4,
+    "guid": "e6f51ae1-5c10-4844-b3bd-15f5ce14abfe"
+  }
+]

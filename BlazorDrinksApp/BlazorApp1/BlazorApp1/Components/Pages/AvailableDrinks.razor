@@ -1,0 +1,70 @@
+﻿@page "/AvailableDrinks"
+@using BlazorApp1.Services
+@using WebApplication1.Model
+@attribute [StreamRendering]
+@inject DrinkService m_DrinkService
+
+<PageTitle>Add a new Drink</PageTitle>
+
+<h1>Here you can view available drinks</h1>
+
+@if (m_Drinks is null)
+{
+    <p><em>Loading...</em></p>
+}
+else if (!m_Drinks.Any())
+{
+    <p>No drinks found</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        @foreach (var drink in m_Drinks)
+        {
+            <tr>
+                <td>
+                    <img src="@LoadImageSrc(drink)" alt="No Image" style="width: 50px; height: 50px;"/>
+                </td>
+                <td>@drink.Name</td>
+                <td>@drink.Category</td>
+                <td>@drink.Type</td>
+                <td>@drink.Description</td>
+                <td>
+                    <a class="btn btn-info btn-sm" href="/Edit/@drink.Id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/Delete/@drink.Id">Delete</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code
+{
+    private IEnumerable<Drink>? m_Drinks;
+
+    protected override async Task OnInitializedAsync() => m_Drinks = await m_DrinkService.GetDrinks();
+
+    private string LoadImageSrc(Drink? drink)
+    {
+        if (drink!.ImageUrl is null) return "";
+        
+        var imageType = "image/png";
+
+        if (drink.ImageUrl.StartsWith("/9j/"))
+            imageType = "image/jpeg";
+
+        return $"data:{imageType};base64,{drink.ImageUrl}";
+    }
+}

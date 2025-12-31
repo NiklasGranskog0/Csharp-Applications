@@ -1,0 +1,39 @@
+﻿<Window x:Class="CashFlowManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CashFlowManagement"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Add Transaction" Width="100" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Click="AddTransaction_Click"></Button>
+        <Button Content="View Transactions" Width="100" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,30,0,0" Click="ViewAllTransactions_Click"></Button>
+        <Button Content="Manage Transactions" Width="120" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,60,0,0" Click="ManageTransactions_Click"></Button>
+        <Button Content="Save Transactions" Width="120" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,0,0" Click="SaveTransactions_Click"></Button>
+        <Button Content="Load Transactions" Width="120" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,30,0,0" Click="LoadTransactions_Click"></Button>
+        
+        <GroupBox Header="Monthly Net Cash-Flow" Width="300" Height="300"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,10"></GroupBox>
+        
+        <ComboBox x:Name="MonthComboBox" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,120"></ComboBox>
+        
+        <Label Content="Businesses" HorizontalContentAlignment="Center" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="25,50,0,70"></Label>
+        <Label x:Name="ProfitLossLabel" Content="Profit" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="25,100,0,70"></Label>
+        <TextBox x:Name="ProfitTextBox" Width="60" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="65, 100, 0, 70" IsReadOnly="True"></TextBox>
+        <ListBox x:Name="BusinessesListBox" Width="100" Height="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,80"></ListBox>
+        
+        <Label Content="Individuals" HorizontalContentAlignment="Center" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="160,50,0,70"></Label>
+        <Label x:Name="SurplusLabel" Content="Surplus" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="160,100,0,70"></Label>
+        <TextBox x:Name="SurplusTextBox" Width="50" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="210, 100, 0, 70" IsReadOnly="True"></TextBox>
+        <ListBox x:Name="IndividualsListBox" Width="100" Height="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="160,0,0,80"></ListBox>
+        
+        <GroupBox Header="Monthly Top Revenue And Expenses" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="300" Height="300" Margin="0,0,10,10"></GroupBox>
+        <ListBox x:Name="TopRevenue" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Height="100" Margin="0,0,200,120"></ListBox>
+        <Label Content="Top 3 Revenue" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,210,220"></Label>
+        
+        <ListBox x:Name="TopExpenses" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Height="100" Margin="0,0,50,120"></ListBox>
+        <Label Content="Top 3 Expenses" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,60,220"></Label>
+        
+        <Label x:Name="TotalNetCashFlow" Content="Total Net-Cash Flow:" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="250" Margin="0,0,40,75"></Label>
+    </Grid>
+</Window>

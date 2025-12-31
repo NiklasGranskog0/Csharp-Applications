@@ -1,0 +1,91 @@
+﻿@page "/AddDrinks"
+@using BlazorApp1.Services
+@using WebApplication1.Model
+@rendermode InteractiveServer
+@inject DrinkService m_DrinkService
+
+<PageTitle>Add a new Drink</PageTitle>
+
+<h1>Add a new Drink</h1>
+<EditForm Model="m_DrinkModel" OnValidSubmit="AddDrink" FormName="AddDrinkForm">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="container">
+        <div>
+            <div>
+                <label for="Name">Name:</label>
+                <InputText id="Name" class="form-control" @bind-Value="m_DrinkModel!.Name" />
+                <ValidationMessage For="@(() => m_DrinkModel.Name)"></ValidationMessage>
+            </div>
+                
+            <div>
+                <label for="Type">Type</label>
+                <InputText id="Type" class="form-control" @bind-Value="m_DrinkModel!.Type" />
+                <ValidationMessage For="@(() => m_DrinkModel.Type)"></ValidationMessage>
+            </div>
+
+            <div>
+                <label for="Category">Category</label>
+                <InputText id="Category" class="form-control" @bind-Value="m_DrinkModel!.Category" />
+                <ValidationMessage For="@(() => m_DrinkModel.Category)"></ValidationMessage>
+            </div>
+
+            <div>
+                <label for="Description">Description</label>
+                <InputText id="Description" class="form-control" @bind-Value="m_DrinkModel!.Description" />
+                <ValidationMessage For="@(() => m_DrinkModel.Description)"></ValidationMessage>
+            </div>
+
+            <div>
+                <label>Image Url</label>
+                <InputFile OnChange="@SaveFile" class="form-control" accept=".png, .jpeg"/>
+                
+                @if (imagePreview != null)
+                {
+                    <div>
+                        <img src="@imagePreview" alt="Image Preview" style="width: 100px; height: 100px;"/>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Add Drink</button>
+    </div>
+</EditForm>
+
+
+
+@code {
+    [SupplyParameterFromForm(FormName = "AddDrinkForm")]
+    private Drink? m_DrinkModel { get; set; }
+
+    protected override void OnInitialized() => m_DrinkModel ??= new Drink();
+
+    private async Task AddDrink()
+    {
+        await m_DrinkService.AddDrink(m_DrinkModel);
+        m_DrinkService.ReturnTo("/AvailableDrinks");
+    }
+
+    private string imagePreview { get; set; }
+    private IBrowserFile m_File;
+    private const long k_MaxFileSize = 1024 * 1024 * 10;
+
+    private async Task SaveFile(InputFileChangeEventArgs e)
+    {
+        m_File = e.File;
+
+        if (m_File.Size > k_MaxFileSize)
+        {
+            throw new Exception("To large image file");
+        }
+
+        using var stream = new MemoryStream();
+        await m_File.OpenReadStream(k_MaxFileSize).CopyToAsync(stream);
+        var imageBytes = stream.ToArray();
+        imagePreview = $"data:{m_File.ContentType};base64,{Convert.ToBase64String(imageBytes)}";
+
+        m_DrinkModel.ImageUrl = Convert.ToBase64String(imageBytes);
+    }
+}

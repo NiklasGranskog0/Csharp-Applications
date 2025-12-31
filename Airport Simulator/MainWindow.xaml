@@ -1,0 +1,32 @@
+﻿<Window x:Class="Airport_Simulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Airport_Simulator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Name" Width="75" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top"></Label>
+        <Label Content="Flight ID" Width="75" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,25,0,0"></Label>
+        <Label Content="Destination" Width="75" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0"></Label>
+        <Label Content="Flight Time" Width="75" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,75,0,0"></Label>
+        <TextBox x:Name="FlightTime" Margin="96,80,0,0" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100"></TextBox>
+        <TextBox x:Name="FlightDestination" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Margin="96,55,0,0"/>
+        <TextBox x:Name="FlightID" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Margin="96,30,0,0"/>
+        <TextBox x:Name="FlightName" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Margin="96,5,0,0"/>
+
+        <ListBox x:Name="AirPlaneInformation" Height="100" VerticalAlignment="Top" Margin="201,5,365,0" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Button Content="Add Plane" Width="75" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="108,132,0,0"
+                Click="AddPlane_Click"></Button>
+        <Button Content="Take Off" Width="75" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="201,132,0,0"
+                Click="PlaneTakeOff_Click"></Button>
+        <Button Content="AltitudeChange" Width="85" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,140,170"
+                Click="PlaneAltitudeChange_Click"></Button>
+        <TextBox x:Name="AltitudeText" Width="50" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,0,0,170"></TextBox>
+        <ListBox x:Name="ArrivalDestination" Margin="38,158,366,123" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+
+        <ListView x:Name="AirPlaneListView" Margin="452,6,136,123" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,131 @@
+﻿@page "/Edit/{m_Id:guid}"
+@using BlazorApp1.Services
+@using WebApplication1.Model
+@rendermode InteractiveServer
+@inject DrinkService m_DrinkService
+
+<PageTitle>Edit Drink</PageTitle>
+
+@if (m_Drink is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <EditForm Model="m_Drink" OnValidSubmit="UpdateDrink" FormName="UpdateDrinkForm">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 p-1">
+                    <label>Name</label>
+                </div>
+                <div class="col-md-4 p-1">
+                    <InputText @bind-Value="m_Drink!.Name" />
+                    <ValidationMessage For="@(() => m_Drink.Name)"></ValidationMessage>
+                </div>
+                <div class="col-md-2 p-1">
+                    <label>Type</label>
+                </div>
+                <div class="col-md-4 p-1">
+                    <InputText @bind-Value="m_Drink!.Type" />
+                    <ValidationMessage For="@(() => m_Drink.Type)"></ValidationMessage>
+                </div>
+                <div class="col-md-2 p-1">
+                    <label>Category</label>
+                </div>
+                <div class="col-md-4 p-1">
+                    <InputText @bind-Value="m_Drink!.Category" />
+                    <ValidationMessage For="@(() => m_Drink.Category)"></ValidationMessage>
+                </div>
+                <div class="col-md-2 p-1">
+                    <label>Description</label>
+                </div>
+                <div class="col-md-4 p-1">
+                    <InputText @bind-Value="m_Drink!.Description" />
+                    <ValidationMessage For="@(() => m_Drink.Description)"></ValidationMessage>
+                </div>
+                <div>
+                    <label>Image</label>
+                    <InputFile OnChange="@SaveFile" class="form-control" accept=".png, .jpeg"/>
+                
+                    @if (m_Drink.ImageUrl != null)
+                    {
+                        <div>
+                            <img src="@LoadImageSrc(m_Drink)" alt="No Image" style="width: 100px; height: 100px;"/>
+                        </div>
+                    }
+                    else if (imagePreview != null)
+                    {
+                        <div>
+                            <img src="@imagePreview" alt="No Image" style="width: 100px; height: 100px;"/>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Update Drink</button>
+        </div>
+    </EditForm>
+}
+
+@code
+{
+    [SupplyParameterFromForm(FormName = "UpdateDrinkForm")]
+    private Drink? m_Drink { get; set; }
+
+    [Parameter] public Guid m_Id { get; set; }
+    
+    private string imagePreview { get; set; }
+    private IBrowserFile m_File;
+    private const long k_MaxFileSize = 1024 * 1024 * 10;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (m_Drink is not null) return;
+
+        m_Drink = await m_DrinkService.GetDrinkById(m_Id);
+
+        if (m_Drink is null)
+        {
+            m_Drink ??= new Drink();
+            m_Drink.Id = m_Id;
+        }
+    }
+
+    private async Task UpdateDrink()
+    {
+        await m_DrinkService.UpdateDrink(m_Id, m_Drink);
+        m_DrinkService.ReturnTo("/AvailableDrinks");
+    }
+
+    private string LoadImageSrc(Drink? drink)
+    {
+        if (drink!.ImageUrl is null) return "";
+        
+        var imageType = "image/png";
+
+        if (drink.ImageUrl.StartsWith("/9j/"))
+            imageType = "image/jpeg";
+
+        return $"data:{imageType};base64,{drink.ImageUrl}";
+    }
+
+    private async Task SaveFile(InputFileChangeEventArgs e)
+    {
+        m_File = e.File;
+
+        if (m_File.Size > k_MaxFileSize)
+        {
+            throw new Exception("To large image file");
+        }
+
+        using var stream = new MemoryStream();
+        await m_File.OpenReadStream(k_MaxFileSize).CopyToAsync(stream);
+        var imageBytes = stream.ToArray();
+        imagePreview = $"data:{m_File.ContentType};base64,{Convert.ToBase64String(imageBytes)}";
+
+        m_Drink.ImageUrl = Convert.ToBase64String(imageBytes);
+    }
+}

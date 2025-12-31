@@ -1,0 +1,25 @@
+﻿<Window x:Class="CashFlowManagement.ViewAllTransactions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:CashFlowManagement"
+        mc:Ignorable="d"
+        Title="ViewAllTransactions" Height="500" Width="500">
+    <Grid>
+        <Label Content="All Transactions" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,10,15,0"></Label>
+        <ListBox x:Name="AllTransactions" Width="400" Height="360" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,70,00,0"></ListBox>
+        <Button Content="Close" VerticalAlignment="Bottom" Click="CloseWindow_Click"></Button>
+        
+        <Label Content="Filter" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0"></Label>
+        <ComboBox x:Name="FilterComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="0,30,0,0"></ComboBox>
+        
+        <Label Content="Search Type:" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,100,0"></Label>
+        <ComboBox x:Name="SearchTypeComboBox" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Margin="0,0,0,0"></ComboBox>
+        
+        <DatePicker x:Name="DatePickerSearch" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,30,0,0" Visibility="Hidden"></DatePicker>
+        <TextBox x:Name="CategorySearch" Width="100" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,30,0,0" Visibility="Hidden"></TextBox>
+        <TextBox x:Name="DescriptionSearch" Width="100" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0, 30, 0, 0" Visibility="Hidden"></TextBox>
+        
+    </Grid>
+</Window>

@@ -1,0 +1,1 @@
+C:\Users\Gamer\Desktop\C#\BlazorApp1\BlazorApp1.Client\obj\Debug\net9.0\staticwebassets.build.json

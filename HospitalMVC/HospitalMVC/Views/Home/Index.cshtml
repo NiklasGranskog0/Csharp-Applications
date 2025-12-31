@@ -1,0 +1,43 @@
+﻿@model HospitalMVC.ViewModels.HomeIndexViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row align-items-start">
+        <div class="col-md-8">
+            <h1 class="display-0 text-start">Welcome to Our Hospital Management
+                System</h1> 
+
+            <img src="~/images/buildingImage.png" alt="Front Page" class="img-fluid" width="260"
+                 height="100">
+
+            @* Temp *@
+            <h2 class="align-self-center">Important Notifications: @Model.Notification</h2>
+            <h5>Total patients admitted: @Model.Patients</h5>
+            <h5>Total Doctors: @Model.Doctors</h5>
+            <h5>Current appointment wait time: @Model.WaitTime</h5>
+        </div>
+
+        <!-- News section -->
+        <div class="col-md-4 bg-body-secondary">
+            <h3 style="text-align: center;">Latest News</h3>
+            
+            @if (Model.NewsItems.Any())
+            {
+                @foreach (var item in Model.NewsItems)
+                {
+                    <div>
+                        <a class="newsLink" href="@item.Url" target="-_blank">
+                            <h5 style="text-align: start">@item.Title</h5>
+                            <p style="text-align: start;">@item.Content</p>
+                            <p>@item.Date.ToShortDateString()</p>
+                        </a>
+                    </div>
+                }
+            }
+           
+            <img src="~/images/buildingImage.png" alt="News" class="img-fluid" width="260" height="100">
+        </div>
+    </div>
+</div>

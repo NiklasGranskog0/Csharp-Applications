@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "DuplicateFinderApp/1.0.0": {
+        "dependencies": {
+          "WindowsAPICodePack.Shell.CommonFileDialogs.Wpf": "1.1.5.1"
+        },
+        "runtime": {
+          "DuplicateFinderApp.dll": {}
+        }
+      },
+      "WindowsAPICodePack.Shell.CommonFileDialogs.Wpf/1.1.5.1": {
+        "runtime": {
+          "lib/net8.0-windows7.0/WindowsAPICodePack.Shell.CommonFileDialogs.Wpf.dll": {
+            "assemblyVersion": "1.1.5.1",
+            "fileVersion": "1.1.5.1"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DuplicateFinderApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WindowsAPICodePack.Shell.CommonFileDialogs.Wpf/1.1.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Q6HAiwXleVfpoOB8BYg6x9V198nE15HQpOAh2U0UkbN3vZRzgvenG6r9qE6VCc8fvmNtTsZlGxD2b4ycdriJIQ==",
+      "path": "windowsapicodepack.shell.commonfiledialogs.wpf/1.1.5.1",
+      "hashPath": "windowsapicodepack.shell.commonfiledialogs.wpf.1.1.5.1.nupkg.sha512"
+    }
+  }
+}

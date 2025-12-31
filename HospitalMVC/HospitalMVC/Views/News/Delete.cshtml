@@ -1,0 +1,31 @@
+﻿@model HospitalMVC.Models.NewsItem
+
+@{
+    ViewData["Title"] = "Delete story";
+}
+
+<h2>Delete story</h2>
+
+<div class="border p-3 mb-3">
+    <dl class="row">
+        <dt class="col-sm-2">Title:</dt>
+        <dd class="col-sm-10">@Model.Title</dd>
+        
+        <dt class="col-sm-2">Content:</dt>
+        <dd class="col-sm-10">@Model.Content</dd>
+        
+        <dt class="col-sm-2">Date:</dt>
+        <dd class="col-sm-10">@Model.Date.ToShortDateString()</dd>
+        
+        <dt class="col-sm-2">Url:</dt>
+        <a class="col-sm-10" href="@Model.Url">
+            <dd>@Model.Url</dd>
+        </a>
+    </dl>    
+</div>
+
+<form asp-action="DeleteConfirmed">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Delete" class="btn btn-danger"/>
+    <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+</form>

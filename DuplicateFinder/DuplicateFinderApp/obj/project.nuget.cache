@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "TuRiZyuzhuo=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Gamer\\Desktop\\C#\\DuplicateFinderApp\\DuplicateFinderApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Gamer\\.nuget\\packages\\windowsapicodepack.shell.commonfiledialogs.wpf\\1.1.5.1\\windowsapicodepack.shell.commonfiledialogs.wpf.1.1.5.1.nupkg.sha512"
+  ],
+  "logs": []
+}

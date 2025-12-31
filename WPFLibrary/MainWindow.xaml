@@ -1,0 +1,76 @@
+﻿<Window x:Class="WPFLibrary.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFLibrary"
+        xmlns:system="clr-namespace:System;assembly=System.Runtime"
+        mc:Ignorable="d"
+        Title="Library" Height="450" Width="800">
+    <Grid>
+        <GroupBox x:Name="BookGroupBox" Header="Book" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Height="200">
+            <Grid>
+                <Label Content="Title" VerticalAlignment="Top" HorizontalAlignment="Left"></Label>
+                <Label Content="Author" Margin="0,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"></Label>
+                <Label Content="Genre" Margin="0,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"></Label>
+                <Label Content="Page Count" Margin="0,90,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"></Label>
+                <Label Content="Rating" Margin="0,120,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"></Label>
+                
+                <TextBox x:Name="BookTitle" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Height="25"></TextBox>
+                <TextBox x:Name="BookAuthor" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Height="25" Margin="0,30,0,0"></TextBox>
+                <ComboBox x:Name="BookGenre" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Height="25" Margin="0,60,0,0" IsReadOnly="True"></ComboBox>
+                <TextBox x:Name="BookPageCount" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Height="25" Margin="0,90,0,0"></TextBox>
+                <ComboBox x:Name="BookRating" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Height="25" Margin="0,120,0,0" IsReadOnly="True"></ComboBox>
+            </Grid>
+        </GroupBox>
+        
+        <GroupBox x:Name="MovieGroupBox" Header="Movie" VerticalAlignment="Top" HorizontalAlignment="Center" Width="200" Height="200" Margin="0,0,180,0">
+            <Grid>
+                <Label Content="Title" VerticalAlignment="Top" HorizontalAlignment="Left"></Label>
+                <Label Content="Main Actor" Margin="0,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"></Label>
+                <Label Content="Genre" Margin="0,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"></Label>
+                <Label Content="Duration(min)" Margin="0,90,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"></Label>
+                <Label Content="Rating" Margin="0,120,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"></Label>
+                
+                <TextBox x:Name="MovieTitle" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Height="25"></TextBox>
+                <TextBox x:Name="MovieActor" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Height="25" Margin="0,30,0,0"></TextBox>
+                <ComboBox x:Name="MovieGenre" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Height="25" Margin="0,60,0,0" IsReadOnly="True"></ComboBox>
+                <TextBox x:Name="MovieDuration" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Height="25" Margin="0,90,0,0"></TextBox>
+                <ComboBox x:Name="MovieRating" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Height="25" Margin="0,120,0,0" IsReadOnly="True"></ComboBox>
+            </Grid>
+        </GroupBox>
+        
+        <GroupBox x:Name="GameGroupBox" Header="Game" VerticalAlignment="Top" HorizontalAlignment="Right" Width="200" Height="200" Margin="0,0,180,0">
+            <Grid>
+                <Label Content="Title" VerticalAlignment="Top" HorizontalAlignment="Left"></Label>
+                <Label Content="Publisher" Margin="0,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"></Label>
+                <Label Content="Genre" Margin="0,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"></Label>
+                <Label Content="Developer" Margin="0,90,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"></Label>
+                <Label Content="Rating" Margin="0,120,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"></Label>
+                
+                <TextBox x:Name="GameTitle" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Height="25"></TextBox>
+                <TextBox x:Name="Publisher" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Height="25" Margin="0,30,0,0"></TextBox>
+                <ComboBox x:Name="GameGenre" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Height="25" Margin="0,60,0,0" IsReadOnly="True"></ComboBox>
+                <TextBox x:Name="Developer" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Height="25" Margin="0,90,0,0"></TextBox>
+                <ComboBox x:Name="GameRating" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Height="25" Margin="0,120,0,0" IsReadOnly="True"></ComboBox>
+            </Grid>
+        </GroupBox>
+        
+        <Button Content="Add" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Margin="0,70,50,0" Click="Add_Click"></Button>
+        <ComboBox x:Name="AddComboBox" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Margin="0,20,50,0" IsReadOnly="True"></ComboBox>
+        
+        <ListBox x:Name="BookList" Width="180" Height="180" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,10"></ListBox>
+        <ListBox x:Name="MovieList" Width="180" Height="180" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,175,10"></ListBox>
+        <ListBox x:Name="GameList" Width="180" Height="180" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,180,10"></ListBox>
+        
+        <Button Content="Change Selected Items" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,20,170" Width="150" Click="Change_Click"></Button>
+        <Button Content="Clear Selected Items" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,20,110" Width="150" Click="Clear_Click"></Button>
+        <Button Content="Delete Selected Items" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,20,50" Width="150" Click="Delete_Click"></Button>
+        
+        <Button Content="Save Data" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,80" Click="Save_Click"></Button>
+        <Button Content="Load Data" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,110,80" Click="Load_Click"></Button>
+        
+        <Button Content="Close Application" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,20,10" Width="150" Click="Close_Click"></Button>
+        
+    </Grid>
+</Window>

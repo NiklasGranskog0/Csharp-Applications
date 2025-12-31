@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../DuplicateFinder.Tests/DuplicateFinder.Tests.csproj" />
+  <Project Path="DuplicateFinderApp.csproj" />
+</Solution>
