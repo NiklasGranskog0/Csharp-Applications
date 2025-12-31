@@ -1,0 +1,14 @@
+C:\Users\Gamer\Desktop\C#\LottoProgram\bin\Debug\net8.0-windows\LottoProgram.exe
+C:\Users\Gamer\Desktop\C#\LottoProgram\bin\Debug\net8.0-windows\LottoProgram.deps.json
+C:\Users\Gamer\Desktop\C#\LottoProgram\bin\Debug\net8.0-windows\LottoProgram.runtimeconfig.json
+C:\Users\Gamer\Desktop\C#\LottoProgram\bin\Debug\net8.0-windows\LottoProgram.dll
+C:\Users\Gamer\Desktop\C#\LottoProgram\bin\Debug\net8.0-windows\LottoProgram.pdb
+C:\Users\Gamer\Desktop\C#\LottoProgram\obj\Debug\net8.0-windows\LottoProgram.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gamer\Desktop\C#\LottoProgram\obj\Debug\net8.0-windows\LottoProgram.AssemblyInfoInputs.cache
+C:\Users\Gamer\Desktop\C#\LottoProgram\obj\Debug\net8.0-windows\LottoProgram.AssemblyInfo.cs
+C:\Users\Gamer\Desktop\C#\LottoProgram\obj\Debug\net8.0-windows\LottoProgram.csproj.CoreCompileInputs.cache
+C:\Users\Gamer\Desktop\C#\LottoProgram\obj\Debug\net8.0-windows\LottoProgram.dll
+C:\Users\Gamer\Desktop\C#\LottoProgram\obj\Debug\net8.0-windows\refint\LottoProgram.dll
+C:\Users\Gamer\Desktop\C#\LottoProgram\obj\Debug\net8.0-windows\LottoProgram.pdb
+C:\Users\Gamer\Desktop\C#\LottoProgram\obj\Debug\net8.0-windows\LottoProgram.genruntimeconfig.cache
+C:\Users\Gamer\Desktop\C#\LottoProgram\obj\Debug\net8.0-windows\ref\LottoProgram.dll
